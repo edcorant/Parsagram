@@ -64,7 +64,11 @@ class Login_View_Controller: UIViewController {
         }
     }
     
-
+    // send keyboard away by tapping anywhere
+    @IBAction func on_tap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
