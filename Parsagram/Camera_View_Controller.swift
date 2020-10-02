@@ -39,7 +39,7 @@ class Camera_View_Controller: UIViewController, UIImagePickerControllerDelegate,
             if success {
                 print("Success!")
                 // dismiss current view upon successful post
-                self.dismiss(animated: true, completion: nil)
+                self.cancel(0)
             }
             
             else {
@@ -81,4 +81,13 @@ class Camera_View_Controller: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
 
+    // tap on white area to dismiss keyboard
+    @IBAction func dismiss_keyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        // sends user back to feed view controller
+        self.dismiss(animated: true, completion: nil)
+    }
 }
