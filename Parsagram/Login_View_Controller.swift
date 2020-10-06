@@ -18,6 +18,10 @@ class Login_View_Controller: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if PFUser.current() != nil {
+            self.performSegue(withIdentifier: "parsagram_login", sender: nil)
+        }
     }
     
     
@@ -30,15 +34,16 @@ class Login_View_Controller: UIViewController {
         // call this function to authenticate user in database
         PFUser.logInWithUsername(inBackground: username, password: password) {
           (user: PFUser?, error: Error?) -> Void in
-          if user != nil {
-            // if successful, go to feed view
-            self.performSegue(withIdentifier: "successful_login", sender: nil)
-          }
-          
-          else {
-            // The login failed. Check error to see why.
-            print("Error: \(error?.localizedDescription).")
-          }
+            
+            if user != nil {
+                self.clear_textboxes()
+                // if successful, go to feed view
+                self.performSegue(withIdentifier: "parsagram_login", sender: nil)
+            }
+            
+            else {
+                print("Error: \(error?.localizedDescription ?? "Sign In Failed").")
+            }
         }
     }
     
@@ -54,29 +59,25 @@ class Login_View_Controller: UIViewController {
         // call this function from to write new user to database
         user.signUpInBackground { (success, error) in
             if success {
+                self.clear_textboxes()
                 // if successful, go to feed view
-                self.performSegue(withIdentifier: "successful_login", sender: nil)
+                self.performSegue(withIdentifier: "parsagram_login", sender: nil)
             }
             
             else {
-                print("Error: \(error?.localizedDescription).")
+                print("Error: \(error?.localizedDescription ?? "Sign Up Failed").")
             }
         }
     }
+    
+    func clear_textboxes () {
+        self.username_textbox.text = ""
+        self.password_textbox.text = ""
+    }
+    
     
     // send keyboard away by tapping anywhere
     @IBAction func on_tap(_ sender: Any) {
         view.endEditing(true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

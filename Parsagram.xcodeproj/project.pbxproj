@@ -10,6 +10,7 @@
 		46E227A7A87D3E85FC23E6DD /* Pods_Parsagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6C3086B52A99A0728756DC /* Pods_Parsagram.framework */; };
 		A6EA9C8DB102ADE68EAC23DD /* Pods_Parsagram_ParsagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A62DA7EFCD3304719863B /* Pods_Parsagram_ParsagramUITests.framework */; };
 		A9DD2FF094D6C0C764BFC1F6 /* Pods_ParsagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3553DAC3F7FE0CC3E3BBFE8E /* Pods_ParsagramTests.framework */; };
+		E935979D25279BE7007BAB11 /* Post_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935979C25279BE7007BAB11 /* Post_Cell.swift */; };
 		E940C1F22526AF6A00932F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940C1F12526AF6A00932F61 /* AppDelegate.swift */; };
 		E940C1F42526AF6A00932F61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940C1F32526AF6A00932F61 /* SceneDelegate.swift */; };
 		E940C1F92526AF6A00932F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E940C1F72526AF6A00932F61 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		DC0A62DA7EFCD3304719863B /* Pods_Parsagram_ParsagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parsagram_ParsagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E551E11955CED53FF5E511B2 /* Pods-Parsagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsagram.debug.xcconfig"; path = "Target Support Files/Pods-Parsagram/Pods-Parsagram.debug.xcconfig"; sourceTree = "<group>"; };
 		E5CE89B5B076B58D9F30E467 /* Pods-ParsagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsagramTests.release.xcconfig"; path = "Target Support Files/Pods-ParsagramTests/Pods-ParsagramTests.release.xcconfig"; sourceTree = "<group>"; };
+		E935979C25279BE7007BAB11 /* Post_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_Cell.swift; sourceTree = "<group>"; };
 		E940C1EE2526AF6A00932F61 /* Parsagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parsagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E940C1F12526AF6A00932F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E940C1F32526AF6A00932F61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				E940C1FA2526AF6E00932F61 /* Assets.xcassets */,
 				E940C1FC2526AF6E00932F61 /* LaunchScreen.storyboard */,
 				E940C1F72526AF6A00932F61 /* Main.storyboard */,
+				E935979C25279BE7007BAB11 /* Post_Cell.swift */,
 				E9E050642526C6CF001072F8 /* Login_View_Controller.swift */,
 				E9E0506C2526C6F4001072F8 /* Feed_View_Controller.swift */,
 				E9E050742526E2D5001072F8 /* Camera_View_Controller.swift */,
@@ -415,6 +418,7 @@
 				E940C1F22526AF6A00932F61 /* AppDelegate.swift in Sources */,
 				E940C1F42526AF6A00932F61 /* SceneDelegate.swift in Sources */,
 				E9E050752526E2D5001072F8 /* Camera_View_Controller.swift in Sources */,
+				E935979D25279BE7007BAB11 /* Post_Cell.swift in Sources */,
 				E9E0506D2526C6F4001072F8 /* Feed_View_Controller.swift in Sources */,
 				E9E050652526C6CF001072F8 /* Login_View_Controller.swift in Sources */,
 			);

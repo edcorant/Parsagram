@@ -30,7 +30,7 @@ class Camera_View_Controller: UIViewController, UIImagePickerControllerDelegate,
         // upload object's owner
         post["Owner"] = PFUser.current()
         // upload the picture itself as PFFileObject
-        post["Image"] = PFFileObject(data: photo_to_post.image!.pngData()!)
+        post["Image"] = PFFileObject(name: "image.png", data: photo_to_post.image!.pngData()!)
         // upload caption
         post["Caption"] = caption_textbox.text ?? ""
         
