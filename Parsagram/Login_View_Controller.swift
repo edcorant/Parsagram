@@ -71,8 +71,8 @@ class Login_View_Controller: UIViewController {
     }
     
     func clear_textboxes () {
-        self.username_textbox.text = ""
-        self.password_textbox.text = ""
+        self.username_textbox.text = nil
+        self.password_textbox.text = nil
     }
     
     

@@ -74,7 +74,7 @@ class Camera_View_Controller: UIViewController, UIImagePickerControllerDelegate,
         // define some new size
         let size = CGSize(width: 300, height: 300)
         // produce a new image by scaling the old image to the newly defined size
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         // pit picture on screen
         photo_to_post.image = scaledImage
         // dismiss?

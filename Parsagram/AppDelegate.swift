@@ -11,7 +11,7 @@ import Parse
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -22,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         Parse.initialize(with: parseConfig)
+        
+        if PFUser.current() != nil {
+            
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feed_navigator = main.instantiateViewController(identifier: "Feed_Navigator")
+            
+            window?.rootViewController = feed_navigator
+        }
         
         return true
     }

@@ -21,6 +21,7 @@
 		E9E050652526C6CF001072F8 /* Login_View_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E050642526C6CF001072F8 /* Login_View_Controller.swift */; };
 		E9E0506D2526C6F4001072F8 /* Feed_View_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0506C2526C6F4001072F8 /* Feed_View_Controller.swift */; };
 		E9E050752526E2D5001072F8 /* Camera_View_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E050742526E2D5001072F8 /* Camera_View_Controller.swift */; };
+		E9E33E5925350E1D001632FD /* Comment_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E33E5825350E1D001632FD /* Comment_Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E9E050642526C6CF001072F8 /* Login_View_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_View_Controller.swift; sourceTree = "<group>"; };
 		E9E0506C2526C6F4001072F8 /* Feed_View_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_View_Controller.swift; sourceTree = "<group>"; };
 		E9E050742526E2D5001072F8 /* Camera_View_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera_View_Controller.swift; sourceTree = "<group>"; };
+		E9E33E5825350E1D001632FD /* Comment_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment_Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				E940C1FA2526AF6E00932F61 /* Assets.xcassets */,
 				E940C1FC2526AF6E00932F61 /* LaunchScreen.storyboard */,
 				E940C1F72526AF6A00932F61 /* Main.storyboard */,
+				E9E33E5825350E1D001632FD /* Comment_Cell.swift */,
 				E935979C25279BE7007BAB11 /* Post_Cell.swift */,
 				E9E050642526C6CF001072F8 /* Login_View_Controller.swift */,
 				E9E0506C2526C6F4001072F8 /* Feed_View_Controller.swift */,
@@ -417,6 +420,7 @@
 			files = (
 				E940C1F22526AF6A00932F61 /* AppDelegate.swift in Sources */,
 				E940C1F42526AF6A00932F61 /* SceneDelegate.swift in Sources */,
+				E9E33E5925350E1D001632FD /* Comment_Cell.swift in Sources */,
 				E9E050752526E2D5001072F8 /* Camera_View_Controller.swift in Sources */,
 				E935979D25279BE7007BAB11 /* Post_Cell.swift in Sources */,
 				E9E0506D2526C6F4001072F8 /* Feed_View_Controller.swift in Sources */,
