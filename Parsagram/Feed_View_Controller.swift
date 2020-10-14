@@ -27,17 +27,11 @@ class Feed_View_Controller: UIViewController, UITableViewDelegate, UITableViewDa
         feed_view.delegate = self
         feed_view.dataSource = self
         
-        feed_view.rowHeight = view.frame.height / 2
-        feed_view.estimatedRowHeight = feed_view.rowHeight
-        
         feed_view.keyboardDismissMode = .interactive
         
         type_box.inputTextView.placeholder = "Add a comment..."
         type_box.sendButton.title = "Post"
         type_box.delegate = self
-        
-        let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(hide_keyboard(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,9 +92,14 @@ class Feed_View_Controller: UIViewController, UITableViewDelegate, UITableViewDa
         else if indexPath.row <= comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Comment_Cell") as! Comment_Cell
             let comment = comments[indexPath.row - 1]
+            let name = comment["Author"] as? PFUser
             
-            cell.commentator.text = comment["Author"] as? String
-            cell.comment.text = comment["Text"] as? String
+            let text = comment["Text"] as? String
+            
+            print("Commentator: \(name)")
+            print("Comment: \(text)")
+            cell.commentator.text = name?.username
+            cell.comment.text = text
             
             return cell
         }
@@ -126,7 +125,7 @@ class Feed_View_Controller: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             else {
-                print("Failed to post comment.")
+                print("Error: \(error?.localizedDescription ?? "Failed to post comment.")")
             }
         }
         
@@ -154,13 +153,17 @@ class Feed_View_Controller: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func sign_out_button(_ sender: Any) {
         PFUser.logOut()
         
-//        let main = UIStoryboard(name: "Main", bundle: nil)
-//        let login_vc = main.instantiateViewController(identifier: "Login_Screen")
-//        let delegate = UIApplication.shared.delegate as! AppDelegate
-//
-//        delegate.window?.rootViewController = login_vc
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let login_vc = main.instantiateViewController(identifier: "Login_Screen")
         
-        dismiss(animated: true, completion: nil)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate
+        
+        else {
+            return
+        }
+        
+        delegate.window?.rootViewController = login_vc
+        UserDefaults.standard.set(false, forKey: "userloggedin")
     }
     
     override var inputAccessoryView: UIView? {

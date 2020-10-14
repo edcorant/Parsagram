@@ -19,8 +19,13 @@ class Login_View_Controller: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if PFUser.current() != nil {
-            self.performSegue(withIdentifier: "parsagram_login", sender: nil)
+        var auto_login = UserDefaults.standard.value(forKey: "userloggedin") as? Bool
+        
+        if auto_login != nil {
+            
+            if PFUser.current() != nil && (auto_login!) {
+                self.performSegue(withIdentifier: "parsagram_login", sender: nil)
+            }
         }
     }
     
@@ -39,6 +44,7 @@ class Login_View_Controller: UIViewController {
                 self.clear_textboxes()
                 // if successful, go to feed view
                 self.performSegue(withIdentifier: "parsagram_login", sender: nil)
+                UserDefaults.standard.set(true, forKey: "userloggedin")
             }
             
             else {
